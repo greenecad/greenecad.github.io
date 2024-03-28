@@ -6,26 +6,34 @@ TestMod.version="0.0.1";
 TestMod.GameVersion="2.052";
 
 TestMod.launch = function(){
+	TestMod=this;
   TestMod.init= function(){
-    Game.Tiers[16]={name:'Ultimatium',unlock:650,achievUnlock:750,iconRow:21,color:'#0f0aa8',price:		50000000000000000000000000000000000000000000}
-    Game.TieredUpgrade('More forwards from grandma','<q>RE:RE:RE:RE:thought you\'d get another kick out of this ;))</q>','Grandma',16);
-    TestMod.isLoaded = 1;
-		if (Game.prefs.popups) Game.Popup(TestMod.name + ' loaded!');
-		else Game.Notify(TestMod.name + ' loaded!', '', '', 1, 1);
+	  
+          Game.Tiers[16]={name:'Ultimatium',unlock:650,achievUnlock:750,iconRow:21,color:'#0f0aa8',price:		50000000000000000000000000000000000000000000}
+    	  Game.TieredUpgrade('More forwards from grandma','<q>RE:RE:RE:RE:thought you\'d get another kick out of this ;))</q>','Grandma',16);
+   	  TestMod.isLoaded = 1;
+    	  if (Game.prefs.popups) Game.Popup(TestMod.name + ' loaded!');
+    	  else Game.Notify(TestMod.name + ' loaded!', '', '', 1, 1);
+	  Game.maxWrinklers=15;
+	  if(!Game.customGetWrinklersMax) Game.customGetWrinklersMax = [];
+		CCSE.ReplaceCodeIntoFunction('Game.getWrinklersMax', 'return', "var ret =", 0);
+	  CCSE.SliceCodeIntoFunction('Game.getWrinklersMax', -1, `
+				// Game.getWrinklersMax injection point 0
+				for(var i in Game.customGetWrinklersMax) ret = Game.customGetWrinklersMax[i](ret);
+				return ret;
+			`);
+	  //finish experimenting later
+	  CCSE.NewUpgrade('Even More Wrinklers', "Increases max wrinklers by one.<q>A nice even 15.</q>", 666666666666666666666666666666666, [0, 3, TestMod.iconsImage])
+	  Game.unlock('Even More Wrinklers');
+	  Game.customGetWrinklersMax.push(function(base){
+	    if(Game.Has('Even More Wrinklers')) base+=1;
+	    return base;
+	  })
+	  
+	  
   }
-  Game.maxWrinklers=15;
-  if(!Game.customGetWrinklersMax) Game.customGetWrinklersMax = [];
-	CCSE.ReplaceCodeIntoFunction('Game.getWrinklersMax', 'return', "var ret =", 0);
-  CCSE.SliceCodeIntoFunction('Game.getWrinklersMax', -1, `
-			// Game.getWrinklersMax injection point 0
-			for(var i in Game.customGetWrinklersMax) ret = Game.customGetWrinklersMax[i](ret);
-			return ret;
-		`);
-  //finish experimenting later
-  game.customGetWrinklersMax.push(function(base){
-    if(Game.Has('Even More Wrinklers')) base+=1;
-    return base;
-  })
+  
+   
   if(CCSE.ConfirmGameVersion(TestMod.name, TestMod.version, TestMod.GameVersion)) TestMod.init();
 }
 
