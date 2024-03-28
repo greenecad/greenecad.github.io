@@ -8,7 +8,7 @@ TestMod.GameVersion="2.052";
 TestMod.launch = function(){
 	TestMod=this;
   TestMod.init= function(){
-	  TestMod.iconsImage="https://greenecad.github.io/img/customIcons.png"
+	  TestMod.iconsImage="https://greenecad.github.io/cc/img/customIcons.png"
           Game.Tiers[16]={name:'Ultimatium',unlock:650,achievUnlock:750,iconRow:21,color:'#0f0aa8',price:		50000000000000000000000000000000000000000000}
     	  Game.TieredUpgrade('More forwards from grandma','<q>RE:RE:RE:RE:thought you\'d get another kick out of this ;))</q>','Grandma',16);
    	  TestMod.isLoaded = 1;
