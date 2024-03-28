@@ -10,7 +10,8 @@ TestMod.launch = function(){
   TestMod.init= function(){
 	  TestMod.iconsImage="https://greenecad.github.io/cc/img/customIcons.png"
           Game.Tiers[16]={name:'Ultimatium',unlock:650,achievUnlock:750,iconRow:21,color:'#0f0aa8',price:		50000000000000000000000000000000000000000000}
-    	  Game.TieredUpgrade('More forwards from grandma','<q>RE:RE:RE:RE:thought you\'d get another kick out of this ;))</q>','Grandma',16);
+    	  var u2=Game.TieredUpgrade('More forwards from grandma','<q>RE:RE:RE:RE:thought you\'d get another kick out of this ;))</q>','Grandma',16);
+	  u2.order=200.85
    	
 	  Game.wrinklerLimit=15;
 	  Game.wrinklers.push({id:"14",close:0,sucked:0,phase:0,x:0,y:0,r:0,hurt:0,hp:Game.wrinklerHP,selected:0,type:0,clicks:0});
@@ -22,7 +23,9 @@ TestMod.launch = function(){
 				return ret;
 			`);
 	  //finish experimenting later
-	  CCSE.NewUpgrade('Even More Wrinklers', "Increases max wrinklers by one.<q>A nice even 15.</q>", 666666666666666666666666666666666, [0, 0, TestMod.iconsImage])
+	  var u1=CCSE.NewUpgrade('Even More Wrinklers', "Increases max wrinklers by one.<q>A nice even 15.</q>", 666666666666666666666666666666666, [0, 0, TestMod.iconsImage]);
+	  u1.order=25001;
+	  
 	  Game.customGetWrinklersMax.push(function(base){
 	    if(Game.Has('Even More Wrinklers')) base+=1;
 	    return Math.min(Game.wrinklerLimit, base);
