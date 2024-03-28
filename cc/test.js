@@ -11,9 +11,7 @@ TestMod.launch = function(){
 	  TestMod.iconsImage="https://greenecad.github.io/cc/img/customIcons.png"
           Game.Tiers[16]={name:'Ultimatium',unlock:650,achievUnlock:750,iconRow:21,color:'#0f0aa8',price:		50000000000000000000000000000000000000000000}
     	  Game.TieredUpgrade('More forwards from grandma','<q>RE:RE:RE:RE:thought you\'d get another kick out of this ;))</q>','Grandma',16);
-   	  TestMod.isLoaded = 1;
-    	  if (Game.prefs.popups) Game.Popup(TestMod.name + ' loaded!');
-    	  else Game.Notify(TestMod.name + ' loaded!', '', '', 1, 1);
+   	
 	  Game.wrinklerLimit=15;
 	  if(!Game.customGetWrinklersMax) Game.customGetWrinklersMax = [];
 		CCSE.ReplaceCodeIntoFunction('Game.getWrinklersMax', 'return', "var ret =", 0);
@@ -29,17 +27,20 @@ TestMod.launch = function(){
 	    return Math.min(Game.wrinklerLimit, base);
 	  })
 	  Game.registerHook("check", function(){
-		  if(TestMod.loaded){
+		  if(TestMod.isLoaded){
 			  if(Game.Has('Elder spice')){
 				  Game.Unlock('Even More Wrinklers');
 			  }
 		  }
 	  })
+	  TestMod.isLoaded = 1;
+    	  if (Game.prefs.popups) Game.Popup(TestMod.name + ' loaded!');
+    	  else Game.Notify(TestMod.name + ' loaded!', '', '', 1, 1);
 	  
   }
   
    
-  if(CCSE.ConfirmGameVersion(TestMod.name, TestMod.version, TestMod.GameVersion)) TestMod.init();
+   TestMod.init();
 }
 
 if(!TestMod.isLoaded){
