@@ -14,7 +14,7 @@ TestMod.launch = function(){
    	  TestMod.isLoaded = 1;
     	  if (Game.prefs.popups) Game.Popup(TestMod.name + ' loaded!');
     	  else Game.Notify(TestMod.name + ' loaded!', '', '', 1, 1);
-	  Game.maxWrinklers=15;
+	  Game.wrinklerLimit=15;
 	  if(!Game.customGetWrinklersMax) Game.customGetWrinklersMax = [];
 		CCSE.ReplaceCodeIntoFunction('Game.getWrinklersMax', 'return', "var ret =", 0);
 	  CCSE.SliceCodeIntoFunction('Game.getWrinklersMax', -1, `
@@ -26,7 +26,7 @@ TestMod.launch = function(){
 	  CCSE.NewUpgrade('Even More Wrinklers', "Increases max wrinklers by one.<q>A nice even 15.</q>", 666666666666666666666666666666666, [0, 0, TestMod.iconsImage])
 	  Game.customGetWrinklersMax.push(function(base){
 	    if(Game.Has('Even More Wrinklers')) base+=1;
-	    return Math.min(Game.maxWrinklers, base);
+	    return Math.min(Game.wrinklerLimit, base);
 	  })
 	  Game.registerHook("check", function(){
 		  if(TestMod.loaded){
