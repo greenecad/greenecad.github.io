@@ -8,7 +8,7 @@ TestMod.GameVersion="2.052";
 TestMod.launch = function(){
 	TestMod=this;
   TestMod.init= function(){
-	  
+	  TestMod.iconsImage="https://greenecad.github.io/img/customIcons.png"
           Game.Tiers[16]={name:'Ultimatium',unlock:650,achievUnlock:750,iconRow:21,color:'#0f0aa8',price:		50000000000000000000000000000000000000000000}
     	  Game.TieredUpgrade('More forwards from grandma','<q>RE:RE:RE:RE:thought you\'d get another kick out of this ;))</q>','Grandma',16);
    	  TestMod.isLoaded = 1;
@@ -23,13 +23,18 @@ TestMod.launch = function(){
 				return ret;
 			`);
 	  //finish experimenting later
-	  CCSE.NewUpgrade('Even More Wrinklers', "Increases max wrinklers by one.<q>A nice even 15.</q>", 666666666666666666666666666666666, [0, 3, TestMod.iconsImage])
-	  Game.unlock('Even More Wrinklers');
+	  CCSE.NewUpgrade('Even More Wrinklers', "Increases max wrinklers by one.<q>A nice even 15.</q>", 666666666666666666666666666666666, [0, 0, TestMod.iconsImage])
 	  Game.customGetWrinklersMax.push(function(base){
 	    if(Game.Has('Even More Wrinklers')) base+=1;
-	    return base;
+	    return Math.min(Game.maxWrinklers, base);
 	  })
-	  
+	  Game.registerHook("check", function(){
+		  if(TestMod.loaded){
+			  if(Game.Has('Elder spice')){
+				  Game.Unlock('Even More Wrinklers');
+			  }
+		  }
+	  })
 	  
   }
   
