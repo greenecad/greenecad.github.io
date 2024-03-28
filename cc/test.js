@@ -13,6 +13,7 @@ TestMod.launch = function(){
     	  Game.TieredUpgrade('More forwards from grandma','<q>RE:RE:RE:RE:thought you\'d get another kick out of this ;))</q>','Grandma',16);
    	
 	  Game.wrinklerLimit=15;
+	  Game.wrinklers.push({id:"14",close:0,sucked:0,phase:0,x:0,y:0,r:0,hurt:0,hp:Game.wrinklerHP,selected:0,type:0,clicks:0});
 	  if(!Game.customGetWrinklersMax) Game.customGetWrinklersMax = [];
 		CCSE.ReplaceCodeIntoFunction('Game.getWrinklersMax', 'return', "var ret =", 0);
 	  CCSE.SliceCodeIntoFunction('Game.getWrinklersMax', -1, `
