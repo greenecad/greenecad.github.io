@@ -11,7 +11,7 @@ TestMod.launch = function(){
           Game.Tiers[16]={name:'obsidamin',unlock:650,achievUnlock:750,iconRow:21,color:'#0f0aa8',price:		50000000000000000000000000000000000000000000}
     	  var u2=Game.TieredUpgrade('More forwards from grandma','<q>RE:RE:RE:RE:thought you\'d get another kick out of this ;))</q>','Grandma',16);
 	  u2.order=200.85
-	  u2.icon=[0, 0, "https://greenecad.github.io/cc/img/customIcons.png"];
+	  u2.icon=[0, 1, "https://greenecad.github.io/cc/img/customIcons.png"];
    	
 	  Game.wrinklerLimit=15;
 	  Game.wrinklers.push({id:"14",close:0,sucked:0,phase:0,x:0,y:0,r:0,hurt:0,hp:Game.wrinklerHP,selected:0,type:0,clicks:0});
@@ -23,7 +23,7 @@ TestMod.launch = function(){
 				return ret;
 			`);
 	  //finish experimenting later
-	  var u1=CCSE.NewUpgrade('Even More Wrinklers', "Increases max wrinklers by one.<q>A nice even 15.</q>", 666666666666666666666666666666666, [0, 0, TestMod.iconsImage]);
+	  var u1=CCSE.NewUpgrade('Even More Wrinklers', "Increases max wrinklers by one.<q>A nice even 15.</q>", 666666666666666666666666666666666, [19, 8]);
 	  u1.order=25001;
 	  
 	  Game.customGetWrinklersMax.push(function(base){
