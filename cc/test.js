@@ -7,7 +7,7 @@ TestMod.GameVersion="2.052";
 
 TestMod.launch = function(){
   TestMod.init= function(){
-	  TestMod.iconsImage="https://greenecad.github.io/cc/img/customIcons.png"
+	  TestMod.iconsImage="https://greenecad.github.io/cc/img/buildingIcons.png"
           Game.Tiers[16]={name:'obsidamin',unlock:650,achievUnlock:750,iconRow:21,color:'#0f0aa8',price:		50000000000000000000000000000000000000000000}
     	  var u2=Game.TieredUpgrade('More forwards from grandma','<q>RE:RE:RE:RE:thought you\'d get another kick out of this ;))</q>','Grandma',16);
 	  u2.order=200.85
