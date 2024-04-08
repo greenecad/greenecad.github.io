@@ -50,25 +50,45 @@ MoreTiers.launch = function(){
     u13.icon=[14,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
     u13.order=1100.9;
     var u14=Game.TieredUpgrade('Ultimate luck charm','<q>A combination of multiple rabbit\'s feet, four leaf clovers, horseshoes, and various other good-luck objects.\nAn absolute abomination to look at, but boosts your luck considerably.</q>','Chancemaker',16);
-    u14.icon=[18,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
+    u14.icon=[19,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
     u14.order=1200.9;
     var u15=Game.TieredUpgrade('Fractal fractals','<q>A fractal that creates fractals that create cookies. But isn\'t this just the definition of a fractal? Fractals are hard to comprehend.</q>','Fractal engine',16);
-    u15.icon=[19,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
+    u15.icon=[20,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
     u15.order=1300.9;
     var u16=Game.TieredUpgrade('while(true) Cookies.create();','<q>For such a simple script, this puts a lot of stress on your servers.</q>','Javascript console',16);
-    u16.icon=[20,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
+    u16.icon=[21,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
     u16.order=1400.9;
     var u17=Game.TieredUpgrade('Quick acension','<q>You have found that many Idleverses obtain certain benefits when all progress is given up and you start back from the beginning. This can be quickly achieved by the complete destruction of all existing life via nuclear warheads. Might be a bit unethical, but look at all those bonuses!</q>','Idleverse',16);
-    u17.icon=[21,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
+    u17.icon=[22,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
     u17.order=1500.9;
-    var u18=Game.TieredUpgrade('Stimulation','<q>The electricity used to transmit signals in your cortex baker\'s brains is absolutely immense. Sometimes they have a hard time coming up with enough energy to run at full capacity. Now, with these new devices resembling giant defibrillators, your cortex bakers can always have enough electricity</q>','Cortex baker',16);
-    u18.icon=[22,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
+    var u18=Game.TieredUpgrade('Stimulation','<q>The electricity used to transmit signals in your cortex baker\'s brains is absolutely immense. Sometimes they have a hard time coming up with enough energy to run at full capacity. Now, with these new devices resembling giant defibrillators, your cortex bakers can always have enough electricity to be running at 100%. Ignore any claims that this causes extreme pain to the cortex bakers.</q>','Cortex baker',16);
+    u18.icon=[23,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
     u18.order=1600.9;
-    var u19=Game.TieredUpgrade('','<q></q>','You',16);
-    u.icon=[23,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
-    u.order=.9;
+    var u19=Game.TieredUpgrade('Other clones','<q>You have had the ability to clone anyone, living or dead, that you have the DNA for, and the only person you have cloned is yourself? What in the world are you doing? Bring back Albert Einstein, clone a few bodybuilders for your personal guard, create a few people to kill for fun, the possibilites are endless!</q>','You',16);
+    u.icon=[24,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
+    u.order=1700.9;
     
-	  
+    var u20=Game.NewUnshackleUpgradeTier({tier: 16,q:'Obsidamin is a rare mineral found deep in the Earth\'s surface, with a hardness greater than diamonds. Licking it gives a warm, slightly spicy flavor, though consumption is generally discouraged.'});
+	  u20.icon=[10,0, "https://greenecad.github.io/cc/img/buildingIcons.png"];
+    u20.order=1999999
+
+    var u21=CCSE.NewUpgrade("Kitten CEOs", "You gain <b>more CpS</b> the more milk you have.<q>Wondurrful business model going, sir</q>", 9000000000000000000000000000000000000000000000000000000000, [18, 0, "https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.last.kitten=1;Game.MakeTiered(Game.last,16);
+    CCSE.ReplaceCodeIntoFunction("Game.CalculateGains", "if (Game.Has('Kitten strategists')) catMult*=(1+Game.milkProgress*0.105*milkMult);", "if (Game.Has('Kitten CEOs')) catMult*=(1+Game.milkProgress*0.11*milkMult);", 1, false, false);
+    u21.order=9999999999
+    
+    //order=102; CCSE.NewUpgrade('Duodecillion fingers',getStrThousandFingersGain(20)+'<q>How does this even work? are these all on one hand?</q>',1000000000000000000000000000000000000,[0,0,"https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.MakeTiered(Game.last,16);
+    //CCSE.ReplaceCodeIntoFunction("Game.mouseCps", "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;", 1, false, false);
+    //CCSE.ReplaceCodeIntoFunction("Game.Init", "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;", 1, false, false);
+
+    order=150;CCSE.NewUpgrade('Mouse mouse',getStrClickingGains(1)+'<q>A mouse made out of a various assortment of mice. Clicks several times at once, and only occasionally makes a squeaking noise.</q>',50000000000000000000000000000,[11,0,"https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.MakeTiered(Game.last,16);
+    CCSE.ReplaceCodeIntoFunction("Game.mouseCps", "if (Game.Has('Omniplast mouse')) add+=Game.cookiesPs*0.01;", "if (Game.Has('Mouse mouse')) add+=Game.cookiesPs*0.01;", 1, false, false);
+    CCSE.ReplaceCodeIntoFunction("Game.Logic", "if (Game.handmadeCookies>=10000000000000000000000000000000) {Game.Win('What\'s not clicking');Game.Unlock('Omniplast mouse');}", "if (Game.handmadeCookies>=1000000000000000000000000000000000) {Game.Win('placeholder');Game.Unlock('Mouse mouse');}", 1, false, false);
+
+    
+    
+
+
+    
     TestMod.isLoaded = 1;
     if (Game.prefs.popups) Game.Popup(TestMod.name + ' loaded!');
     else Game.Notify(TestMod.name + ' loaded!', '', '', 1, 1);
