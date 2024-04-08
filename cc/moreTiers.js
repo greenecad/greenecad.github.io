@@ -61,7 +61,7 @@ MoreTiers.launch = function(){
     var u17=Game.TieredUpgrade('Quick acension','<q>You have found that many Idleverses obtain certain benefits when all progress is given up and you start back from the beginning. This can be quickly achieved by the complete destruction of all existing life via nuclear warheads. Might be a bit unethical, but look at all those bonuses!</q>','Idleverse',16);
     u17.icon=[22,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
     u17.order=1500.9;
-    var u18=Game.TieredUpgrade('Stimulation','<q>The electricity used to transmit signals in your cortex baker\'s brains is absolutely immense. Sometimes they have a hard time coming up with enough energy to run at full capacity. Now, with these new devices resembling giant defibrillators, your cortex bakers can always have enough electricity to be running at 100%. Ignore any claims that this causes extreme pain to the cortex bakers.</q>','Cortex baker',16);
+    var u18=Game.TieredUpgrade('Electrical stimulation','<q>The electricity used to transmit signals in your cortex baker\'s brains is absolutely immense. Sometimes they have a hard time coming up with enough energy to run at full capacity. Now, with these new devices resembling giant defibrillators, your cortex bakers can always have enough electricity to be running at 100%. Ignore any claims that this causes extreme pain to the cortex bakers.</q>','Cortex baker',16);
     u18.icon=[23,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
     u18.order=1600.9;
     var u19=Game.TieredUpgrade('Other clones','<q>You have had the ability to clone anyone, living or dead, that you have the DNA for, and the only person you have cloned is yourself? What in the world are you doing? Bring back Albert Einstein, clone a few bodybuilders for your personal guard, create a few people to kill for fun, the possibilites are endless!</q>','You',16);
@@ -73,17 +73,101 @@ MoreTiers.launch = function(){
     u20.order=1999999
 
     var u21=CCSE.NewUpgrade("Kitten CEOs", "You gain <b>more CpS</b> the more milk you have.<q>Wondurrful business model going, sir</q>", 9000000000000000000000000000000000000000000000000000000000, [18, 0, "https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.last.kitten=1;Game.MakeTiered(Game.last,16);
-    CCSE.ReplaceCodeIntoFunction("Game.CalculateGains", "if (Game.Has('Kitten strategists')) catMult*=(1+Game.milkProgress*0.105*milkMult);", "if (Game.Has('Kitten CEOs')) catMult*=(1+Game.milkProgress*0.11*milkMult);", 1, false, false);
+    CCSE.ReplaceCodeIntoFunction("Game.CalculateGains", "if (Game.Has('Kitten strategists')) catMult*=(1+Game.milkProgress*0.105*milkMult);", "if (Game.Has('Kitten CEOs')) catMult*=(1+Game.milkProgress*0.12*milkMult);", 1, false, false);
     u21.order=9999999999
     
-    //order=102; CCSE.NewUpgrade('Duodecillion fingers',getStrThousandFingersGain(20)+'<q>How does this even work? are these all on one hand?</q>',1000000000000000000000000000000000000,[0,0,"https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.MakeTiered(Game.last,16);
-    //CCSE.ReplaceCodeIntoFunction("Game.mouseCps", "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;", 1, false, false);
-    //CCSE.ReplaceCodeIntoFunction("Game.Init", "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;", 1, false, false);
+    order=102; CCSE.NewUpgrade('Duodecillion fingers',getStrThousandFingersGain(20)+'<q>How does this even work? are these all on one hand?</q>',1000000000000000000000000000000000000,[0,0,"https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.MakeTiered(Game.last,16);
+    CCSE.ReplaceCodeIntoFunction("Game.mouseCps", "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;", 1, false, false);
+    CCSE.ReplaceCodeIntoFunction(Game.Objects["Cursor"].buyFunction, "if (this.amount>=550) Game.Unlock('Undecillion fingers');", "if (this.amount>=600) Game.Unlock('Duodecillion fingers');", 1, false, false);
+    CCSE.ReplaceCodeIntoFunction(Game.Objects["Cursor"].cps, "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;", 1, false, false);
 
     order=150;CCSE.NewUpgrade('Mouse mouse',getStrClickingGains(1)+'<q>A mouse made out of a various assortment of mice. Clicks several times at once, and only occasionally makes a squeaking noise.</q>',50000000000000000000000000000,[11,0,"https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.MakeTiered(Game.last,16);
     CCSE.ReplaceCodeIntoFunction("Game.mouseCps", "if (Game.Has('Omniplast mouse')) add+=Game.cookiesPs*0.01;", "if (Game.Has('Mouse mouse')) add+=Game.cookiesPs*0.01;", 1, false, false);
-    CCSE.ReplaceCodeIntoFunction("Game.Logic", "if (Game.handmadeCookies>=10000000000000000000000000000000) {Game.Win('What\'s not clicking');Game.Unlock('Omniplast mouse');}", "if (Game.handmadeCookies>=1000000000000000000000000000000000) {Game.Win('placeholder');Game.Unlock('Mouse mouse');}", 1, false, false);
+    CCSE.ReplaceCodeIntoFunction("Game.Logic", "if (Game.handmadeCookies>=10000000000000000000000000000000) {Game.Win('What\'s not clicking');Game.Unlock('Omniplast mouse');}", "if (Game.handmadeCookies>=100000000000000000000000000000000000) {Game.Win('Probably an autoclicker');Game.Unlock('Mouse mouse');}", 1, false, false);
 
+    var u22;
+    u22=Game.TieredAchievement('Absolutely ancient','','Grandma',16);
+    u22.order=1100.7;
+    u22.icon=[1,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+
+    u22=Game.TieredAchievement('Really time to hit the hay','','Farm',16);
+    u22.order=1200.7;
+    u22.icon=[2,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('Like data mining, but the real thing','','Mine',16);
+    u22.order=1300.7;
+    u22.icon=[3,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('Factorio lover','','Factory',16);
+    u22.order=1400.7;
+    u22.icon=[4,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('I like money','Agegegegegege!','Bank',16);
+    u22.order=1425.7;
+    u22.icon=[15,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('The flying cookie monster','','Temple',16);
+    u22.order=1450.7;
+    u22.icon=[16,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('You\'re a wizard, Harry','','Wizard tower',16);
+    u22.order=1475.7;
+    u22.icon=[17,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('End of the universe','','Shipment',16);
+    u22.order=1500.7;
+    u22.icon=[5,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('Cookie is the new gold','','Alchemy lab',16);
+    u22.order=1600.7;
+    u22.icon=[6,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('Into the unknown','','Portal',16);
+    u22.order=1700.7;
+    u22.icon=[7,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('Time devourer','','Time machine',16);
+    u22.order=1800.7;
+    u22.icon=[8,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('Real poetry talk','When you are required to describe something in purely metaphorical terms because of the sheer insanity of what your dealing with, you know you\'re coming to the end.<br>Of what? Your sanity, of course.','Antimatter condenser',16);
+    u22.order=1900.7;
+    u22.icon=[13,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('Ooohh, colors','','Prism',16);
+    u22.order=2000.7;
+    u22.icon=[14,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('Luckiest man alive','','Chancemaker',16);
+    u22.order=2100.7;
+    u22.icon=[19,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('From cookie to cookie','','Fractal engine',16);
+    u22.order=2200.7;
+    u22.icon=[20,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('Big cookie notation','','Javascript console',16);
+    u22.order=2300.7;
+    u22.icon=[21,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('Through the Idleverse','Coming to theatres this summer!','Idleverse',16);
+    u22.order=2400.7;
+    u22.icon=[22,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('brainwaves','','Cortex baker',16);
+    u22.order=2500.7;
+    u22.icon=[23,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=Game.TieredAchievement('You weren\'t satisfied with your own self','Where did that bring you? back to yourself.','You',16);
+    u22.order=2600.7;
+    u22.icon=[24,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
+    
+    u22=CCSE.NewAchievement('Hand it over, buddy',loc("Have <b>%1</b>.",loc("%1 cursor",LBeautify(1100))), [0,30])
+    u22.order=1050.7;
+    CCSE.ReplaceCodeIntoFunction(Game.Objects["Cursor"].buyFunction, "if (this.amount>=1000) Game.Win('A round of applause');", "if (this.amount>=1100) Game.Win('Hand it over, buddy');", 1, false, false);
+    
+    u22= CCSE.NewAchievement('Probably an autoclicker',loc("Make <b>%1</b> from clicking.",loc("%1 cookie",LBeautify(1e35))),[11,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]);
+    u22.order=1000.7;
     
     
 
