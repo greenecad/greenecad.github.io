@@ -173,7 +173,7 @@ MoreTiers.launch = function(){
 
 
     
-    TestMod.isLoaded = 1;
+    MoreTiers.isLoaded = 1;
     if (Game.prefs.popups) Game.Popup(MoreTiers.name + ' loaded!');
     else Game.Notify(MoreTiers.name + ' loaded!', '', '', 1, 1);
   }
