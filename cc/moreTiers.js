@@ -70,7 +70,11 @@ MoreTiers.launch = function(){
     
     var u20=Game.NewUnshackleUpgradeTier({tier: 16,q:'Obsidamin is a rare mineral found deep in the Earth\'s surface. When it is a solid, its hardness is greater than diamonds, but it melts into an orange substance at room temperature. Licking it gives a warm, slightly spicy flavor, though consumption is generally discouraged.'});
     u20.icon=[10,0, "https://greenecad.github.io/cc/img/buildingIcons.png"];
-    u20.order=1999999
+    u20.order=505.016;
+    u20.parents=[Game.PrestigeUpgrades[127]]
+    Game.PrestigeUpgrades.push(u20);
+    u20.placedByCode=true;
+    u20.canBePurchased=true;
 
     var u21=CCSE.NewUpgrade("Kitten CEOs", "You gain <b>more CpS</b> the more milk you have.<q>Wondurrful business model going, sir</q>", 9000000000000000000000000000000000000000000000000000000000, [18, 0, "https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.last.kitten=1;Game.MakeTiered(Game.last,16);
     CCSE.ReplaceCodeIntoFunction("Game.CalculateGains", "if (Game.Has('Kitten strategists')) catMult*=(1+Game.milkProgress*0.105*milkMult);", "if (Game.Has('Kitten CEOs')) catMult*=(1+Game.milkProgress*0.12*milkMult);", 1, false, false);
