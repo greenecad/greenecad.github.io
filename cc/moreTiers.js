@@ -2,7 +2,7 @@ Game.Win('Third-party');
 if(MoreTiers === undefined) var MoreTiers = {};
 if(typeof CCSE == 'undefined') Game.LoadMod('https://klattmose.github.io/CookieClicker/CCSE.js');
 MoreTiers.name="More Tiers";
-MoreTiers.version="0.0.1";
+MoreTiers.version="0.1.2";
 MoreTiers.GameVersion="2.052";
 
 MoreTiers.launch = function(){
@@ -68,7 +68,7 @@ MoreTiers.launch = function(){
     u.icon=[24,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
     u.order=1700.9;
     
-    var u20=Game.NewUnshackleUpgradeTier({tier: 16,q:'Obsidamin is a rare mineral found deep in the Earth\'s surface, with a hardness greater than diamonds. Licking it gives a warm, slightly spicy flavor, though consumption is generally discouraged.'});
+    var u20=Game.NewUnshackleUpgradeTier({tier: 16,q:'Obsidamin is a rare mineral found deep in the Earth\'s surface. When it is a solid, its hardness is greater than diamonds, but it melts into an orange substance at room temperature. Licking it gives a warm, slightly spicy flavor, though consumption is generally discouraged.'});
 	  u20.icon=[10,0, "https://greenecad.github.io/cc/img/buildingIcons.png"];
     u20.order=1999999
 
