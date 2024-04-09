@@ -2,7 +2,7 @@ Game.Win('Third-party');
 if(MoreTiers === undefined) var MoreTiers = {};
 if(typeof CCSE == 'undefined') Game.LoadMod('https://klattmose.github.io/CookieClicker/CCSE.js');
 MoreTiers.name="More Tiers";
-MoreTiers.version="0.1.2";
+MoreTiers.version="0.2.1";
 MoreTiers.GameVersion="2.052";
 
 MoreTiers.launch = function(){
