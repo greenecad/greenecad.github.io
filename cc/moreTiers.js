@@ -81,7 +81,7 @@ MoreTiers.launch = function(){
     CCSE.ReplaceCodeIntoFunction("Game.Objects['Cursor'].buyFunction", "if (this.amount>=550) Game.Unlock('Undecillion fingers');", "if (this.amount>=600) Game.Unlock('Duodecillion fingers');", 1, false, false);
     CCSE.ReplaceCodeIntoFunction("Game.Objects['Cursor'].cps", "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;", 1, false, false);
 
-    order=150;CCSE.NewUpgrade('Mouse mouse',getStrClickingGains(1)+'<q>A mouse made out of a various assortment of mice. Clicks several times at once, and only occasionally makes a squeaking noise.</q>',50000000000000000000000000000,[11,0,"https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.MakeTiered(Game.last,16);
+    order=150;CCSE.NewUpgrade('Mouse mouse',loc("Clicking gains <b>+%1% of your CpS</b>.",1)+'<q>A mouse made out of a various assortment of mice. Clicks several times at once, and only occasionally makes a squeaking noise.</q>',50000000000000000000000000000,[11,0,"https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.MakeTiered(Game.last,16);
     CCSE.ReplaceCodeIntoFunction("Game.mouseCps", "if (Game.Has('Omniplast mouse')) add+=Game.cookiesPs*0.01;", "if (Game.Has('Mouse mouse')) add+=Game.cookiesPs*0.01;", 1, false, false);
     CCSE.ReplaceCodeIntoFunction("Game.Logic", "if (Game.handmadeCookies>=10000000000000000000000000000000) {Game.Win('What\'s not clicking');Game.Unlock('Omniplast mouse');}", "if (Game.handmadeCookies>=100000000000000000000000000000000000) {Game.Win('Probably an autoclicker');Game.Unlock('Mouse mouse');}", 1, false, false);
 
