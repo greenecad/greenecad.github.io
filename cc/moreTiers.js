@@ -8,7 +8,7 @@ MoreTiers.GameVersion="2.052";
 MoreTiers.launch = function(){
   MoreTiers.init= function(){
 
-    Game.Tiers[16]={name:'obsidamin',unlock:650,achievUnlock:750,iconRow:21,color:'#0f0aa8',price:		5000000000000000000000000000000000000000000000}
+    Game.Tiers[16]={name:'obsidamin',unlock:650,achievUnlock:750,iconRow:21,tier:16, color:'#0f0aa8',price:		5000000000000000000000000000000000000000000000}
 
     var u1=Game.TieredUpgrade('Grandpas','<q>The presence of grandpas seems to have different effects on various grandmas. Some work harder, some spend more time fussing at them than baking more cookies. This upgrade allows you to perfectly optimize th euse of grandpas to maximize your grandma\'s baking capacity.</q>','Grandma',16);
     u1.icon=[1,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
