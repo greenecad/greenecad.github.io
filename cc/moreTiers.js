@@ -174,10 +174,10 @@ MoreTiers.launch = function(){
 
     
     TestMod.isLoaded = 1;
-    if (Game.prefs.popups) Game.Popup(TestMod.name + ' loaded!');
-    else Game.Notify(TestMod.name + ' loaded!', '', '', 1, 1);
+    if (Game.prefs.popups) Game.Popup(MoreTiers.name + ' loaded!');
+    else Game.Notify(MoreTiers.name + ' loaded!', '', '', 1, 1);
   }
-  if(CCSE.ConfirmGameVersion(TestMod.name, TestMod.version, TestMod.GameVersion))TestMod.init();
+  if(CCSE.ConfirmGameVersion(MoreTiers.name, MoreTiers.version, MoreTiers.GameVersion))MoreTiers.init();
 }
 
 if(!MoreTiers.isLoaded){
