@@ -76,7 +76,7 @@ MoreTiers.launch = function(){
     CCSE.ReplaceCodeIntoFunction("Game.CalculateGains", "if (Game.Has('Kitten strategists')) catMult*=(1+Game.milkProgress*0.105*milkMult);", "if (Game.Has('Kitten CEOs')) catMult*=(1+Game.milkProgress*0.12*milkMult);", 1, false, false);
     u21.order=9999999999
     
-    order=102; CCSE.NewUpgrade('Duodecillion fingers',getStrThousandFingersGain(20)+'<q>How does this even work? are these all on one hand?</q>',1000000000000000000000000000000000000,[0,0,"https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.MakeTiered(Game.last,16);
+    order=102; CCSE.NewUpgrade('Duodecillion fingers',loc("Multiplies the gain from %1 by <b>%2</b>.",[getUpgradeName("Thousand fingers"),20]);+'<q>How does this even work? are these all on one hand?</q>',1000000000000000000000000000000000000,[0,0,"https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.MakeTiered(Game.last,16);
     CCSE.ReplaceCodeIntoFunction("Game.mouseCps", "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;", 1, false, false);
     CCSE.ReplaceCodeIntoFunction(Game.Objects["Cursor"].buyFunction, "if (this.amount>=550) Game.Unlock('Undecillion fingers');", "if (this.amount>=600) Game.Unlock('Duodecillion fingers');", 1, false, false);
     CCSE.ReplaceCodeIntoFunction(Game.Objects["Cursor"].cps, "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;", 1, false, false);
