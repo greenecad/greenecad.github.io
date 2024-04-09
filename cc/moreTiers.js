@@ -65,11 +65,11 @@ MoreTiers.launch = function(){
     u18.icon=[23,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
     u18.order=1600.9;
     var u19=Game.TieredUpgrade('Other clones','<q>You have had the ability to clone anyone, living or dead, that you have the DNA for, and the only person you have cloned is yourself? What in the world are you doing? Bring back Albert Einstein, clone a few bodybuilders for your personal guard, create a few people to kill for fun, the possibilites are endless!</q>','You',16);
-    u.icon=[24,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
-    u.order=1700.9;
+    u19.icon=[24,0,"https://greenecad.github.io/cc/img/buildingIcons.png"];
+    u19.order=1700.9;
     
     var u20=Game.NewUnshackleUpgradeTier({tier: 16,q:'Obsidamin is a rare mineral found deep in the Earth\'s surface. When it is a solid, its hardness is greater than diamonds, but it melts into an orange substance at room temperature. Licking it gives a warm, slightly spicy flavor, though consumption is generally discouraged.'});
-	  u20.icon=[10,0, "https://greenecad.github.io/cc/img/buildingIcons.png"];
+    u20.icon=[10,0, "https://greenecad.github.io/cc/img/buildingIcons.png"];
     u20.order=1999999
 
     var u21=CCSE.NewUpgrade("Kitten CEOs", "You gain <b>more CpS</b> the more milk you have.<q>Wondurrful business model going, sir</q>", 9000000000000000000000000000000000000000000000000000000000, [18, 0, "https://greenecad.github.io/cc/img/buildingIcons.png"]);Game.last.kitten=1;Game.MakeTiered(Game.last,16);
