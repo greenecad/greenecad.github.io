@@ -174,7 +174,18 @@ MoreTiers.launch = function(){
     
     u22= CCSE.NewAchievement('Probably an autoclicker',loc("Make <b>%1</b> from clicking.",loc("%1 cookie",LBeautify(1e35))),[11,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]);
     u22.order=1000.7;
-    
+
+    CCSE.customSave.push(function(){
+      MoreTiers.config.hasObsidamin=false;
+      if(Game.Has('Unshackled obsidamin'))
+        MoreTiers.config.hasObsidamin=true;
+  	  CCSE.config.OtherMods.MyMod = MoreTiers.config;
+    });
+    CCSE.customLoad.push(function(){
+    	if(CCSE.config.OtherMods.MoreTiers) MoreTiers.config = CCSE.config.OtherMods.MyMod; else MoreTiers.config = {};
+    	// Do other things if you want
+      if(MoreTiers.config.hasObsidamin) u20.bought=1;
+    });
     
 
 
