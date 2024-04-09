@@ -104,7 +104,7 @@ MoreTiers.launch = function(){
     u22.order=1400.7;
     u22.icon=[4,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
     
-    u22=Game.TieredAchievement('I like money','Agegegegegege!','Bank',16);
+    u22=Game.TieredAchievement('I like money','<q>Agegegegegege!</q>','Bank',16);
     u22.order=1425.7;
     u22.icon=[15,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
     
@@ -132,7 +132,7 @@ MoreTiers.launch = function(){
     u22.order=1800.7;
     u22.icon=[8,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
     
-    u22=Game.TieredAchievement('Real poetry talk','When you are required to describe something in purely metaphorical terms because of the sheer insanity of what your dealing with, you know you\'re coming to the end.<br>Of what? Your sanity, of course.','Antimatter condenser',16);
+    u22=Game.TieredAchievement('Real poetry talk','<q>When you are required to describe something in purely metaphorical terms because of the sheer insanity of what your dealing with, you know you\'re coming to the end.<br>Of what? Your sanity, of course.</q>','Antimatter condenser',16);
     u22.order=1900.7;
     u22.icon=[13,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
     
@@ -152,7 +152,7 @@ MoreTiers.launch = function(){
     u22.order=2300.7;
     u22.icon=[21,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
     
-    u22=Game.TieredAchievement('Through the Idleverse','Coming to theatres this summer!','Idleverse',16);
+    u22=Game.TieredAchievement('Through the Idleverse','<q>Coming to theatres this summer!</q>','Idleverse',16);
     u22.order=2400.7;
     u22.icon=[22,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
     
@@ -160,7 +160,7 @@ MoreTiers.launch = function(){
     u22.order=2500.7;
     u22.icon=[23,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
     
-    u22=Game.TieredAchievement('You weren\'t satisfied with your own self','Where did that bring you? back to yourself.','You',16);
+    u22=Game.TieredAchievement('You weren\'t satisfied with your own self','<q>Where did that bring you? back to yourself.</q>','You',16);
     u22.order=2600.7;
     u22.icon=[24,0, "https://greenecad.github.io/cc/img/buildingIcons.png"]
     
