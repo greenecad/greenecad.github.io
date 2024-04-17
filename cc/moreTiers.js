@@ -8,9 +8,9 @@ MoreTiers.url="https://greenecad.github.io/cc/img/buildings.png";
 MoreTiers.launch = function(){
   MoreTiers.init= function(){
 
-    Game.Tiers[16]={name:'obsidamin',unlock:650,achievUnlock:750,iconRow:21,tier:16, color:'#0f0aa8',price:		5000000000000000000000000000000000000000000000}
+    Game.Tiers[16]={name:'Obsidamin',unlock:650,achievUnlock:750,iconRow:21,tier:16, color:'#0f0aa8',price:		5000000000000000000000000000000000000000000000}
 
-    var u1=Game.TieredUpgrade('Grandpas','<q>The presence of grandpas seems to have different effects on various grandmas. Some work harder, some spend more time fussing at them than baking more cookies. This upgrade allows you to perfectly optimize th euse of grandpas to maximize your grandma\'s baking capacity.</q>','Grandma',16);
+    var u1=Game.TieredUpgrade('Grandpas','<q>The presence of grandpas seems to have different effects on various grandmas. Some work harder, some spend more time fussing at their partners than baking more cookies. This upgrade allows you to perfectly optimize the use of grandpas to maximize your grandma\'s baking capacity.</q>','Grandma',16);
     u1.icon=[1,0,MoreTiers.url];
     u1.order=200.9;
     var u2=Game.TieredUpgrade('Weather Manipulation','<q>Cookie plants are notoriously fickle. One Freeze or thunderstorm can destroy a whole farm of cookies! Thankfully, with your full control of all time and space, you can control what types of weather come to your farms, ensuring all your fields are in perfect condition.\nThe ability to control all weather also helps with negotiations with foreign countries. No rain for you!</q>','Farm',16);
@@ -77,19 +77,15 @@ MoreTiers.launch = function(){
     u20.canBePurchased=true;
 
     var u21=CCSE.NewUpgrade("Kitten CEOs", "You gain <b>more CpS</b> the more milk you have.<q>Wondurrful business model going, sir</q>", 9000000000000000000000000000000000000000000000000000000000, [18, 0, MoreTiers.url]);Game.last.kitten=1;Game.MakeTiered(Game.last,16);
-    CCSE.ReplaceCodeIntoFunction("Game.CalculateGains", "if (Game.Has('Kitten strategists')) catMult*=(1+Game.milkProgress*0.105*milkMult);", "if (Game.Has('Kitten CEOs')) catMult*=(1+Game.milkProgress*0.12*milkMult);", 1, false, false);
-    CCSE.ReplaceCodeIntoFunction("Game.Logic", "if (Game.milkProgress>=14) Game.Unlock('Kitten strategists');", "if (Game.milkProgress>=15) Game.Unlock('Kitten CEOs');", 1);
+    
     u21.order=20000.9
     
     CCSE.NewUpgrade('Duodecillion fingers',loc("Multiplies the gain from %1 by <b>%2</b>.",[getUpgradeName("Thousand fingers"),20])+'<q>How does this even work? are these all on one hand?</q>',1000000000000000000000000000000000000,[0,0,MoreTiers.url]);Game.MakeTiered(Game.last,16); Game.last.order=100.9;
-    CCSE.ReplaceCodeIntoFunction("Game.mouseCps", "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;", 1, false, false);
-    CCSE.ReplaceCodeIntoFunction("Game.Objects['Cursor'].buyFunction", "if (this.amount>=550) Game.Unlock('Undecillion fingers');", "if (this.amount>=600) Game.Unlock('Duodecillion fingers');", 1, false, false);
-    CCSE.ReplaceCodeIntoFunction("Game.Objects['Cursor'].cps", "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;", 1, false, false);
+    
 
     u21=CCSE.NewUpgrade('Mouse mouse',loc("Clicking gains <b>+%1% of your CpS</b>.",1)+'<q>A mouse made out of a various assortment of mice. Clicks several times at once, and only occasionally makes a squeaking noise.</q>',50000000000000000000000000000,[11,0,MoreTiers.url]);Game.MakeTiered(Game.last,16);
     u21.order=150.9
-    CCSE.ReplaceCodeIntoFunction("Game.mouseCps", "if (Game.Has('Omniplast mouse')) add+=Game.cookiesPs*0.01;", "if (Game.Has('Mouse mouse')) add+=Game.cookiesPs*0.01;", 1, false, false);
-    CCSE.ReplaceCodeIntoFunction("Game.Logic", "Unlock('Omniplast mouse');}", "if (Game.handmadeCookies>=100000000000000000000000000000000000) {Game.Win('Probably an autoclicker');Game.Unlock('Mouse mouse');}", 1);
+    
 
     var u22;
     u22=Game.TieredAchievement('Absolutely ancient','','Grandma',16);
@@ -170,24 +166,190 @@ MoreTiers.launch = function(){
     
     u22=CCSE.NewAchievement('Hand it over, buddy',loc("Have <b>%1</b>.",loc("%1 cursor",LBeautify(1100))), [0,30])
     u22.order=1050.7;
-    CCSE.ReplaceCodeIntoFunction('Game.Objects["Cursor"].buyFunction', "if (this.amount>=1000) Game.Win('A round of applause');", "if (this.amount>=1100) Game.Win('Hand it over, buddy');", 1, false, false);
     
     u22= CCSE.NewAchievement('Probably an autoclicker',loc("Make <b>%1</b> from clicking.",loc("%1 cookie",LBeautify(1e35))),[11,0, MoreTiers.url]);
     u22.order=1000.7;
 
+    
+Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:16, color:'#0f0aa8',price:		999000000000000000000000000000000000000000000000}
+
+    var uu1=Game.TieredUpgrade('forward it back to grandma','<q>At this point, she\'s already forgotten that she sent it to you.</q>','Grandma',17);
+    uu1.icon=[1,1,MoreTiers.url];
+    uu1.order=200.91;
+    var uu2=Game.TieredUpgrade('Cheap(er) mega-automotized-AI-powered-Nuclear-fueled farming tractors with hoeing capability','<q>Raking in way more dough!</q>','Farm',17);
+    uu2.icon=[2,1,MoreTiers.url];
+    uu2.order=300.91;
+    var uu3=Game.TieredUpgrade('Sugar gas processing','<q>That sugar gas you\'ve been using can be chemically treated and compressed to become much more explosive than usual.</q>','Mine',17);
+    uu3.icon=[3,1,MoreTiers.url];
+    uu3.order=400.91;
+    var uu4=Game.TieredUpgrade('Even sturdier conveyer belts','<q>Helps cut down on maintenance costs quite considerably, especially with your assembly tesseracts.</q>','Factory',17);
+    uu4.icon=[4,1,MoreTiers.url];
+    uu4.order=500.91;
+    var uu5=Game.TieredUpgrade('Much taller tellers','<q>Non freaks of nature need not apply.</q>','Bank',17);
+    uu5.icon=[15,1,MoreTiers.url];
+    uu5.order=525.91;
+    var uu6=Game.TieredUpgrade('Diamond Idols','<q>Only for the most Wario-like of adventurers.</q>','Temple',17);
+    uu6.icon=[16,1,MoreTiers.url];
+    uu6.order=550.91;
+    var uu7=Game.TieredUpgrade('Really pointy hats','<q>Don\'t touch it!</q>','Wizard tower',17);
+    uu7.icon=[17,1,MoreTiers.url];
+    uu7.order=575.91;
+    var uu8=Game.TieredUpgrade('Chocolate nebulas','<q>How do these help you again?</q>','Shipment',17);
+    uu8.icon=[5,1,MoreTiers.url];
+    uu8.order=600.91;
+    var uu9=Game.TieredUpgrade('promony','<q>Actually not worth much money.</q>','Alchemy lab',17);
+    uu9.icon=[6,1,MoreTiers.url];
+    uu9.order=700.91;
+    var uu10=Game.TieredUpgrade('','<q></q>','Portal',17);
+    uu10.icon=[7,1,MoreTiers.url];
+    uu10.order=800.91;
+    var uu11=Game.TieredUpgrade('Flux overdrive','<q>This is generally not considered a good thing. Who cares, though?</q>','Time machine',17);
+    uu11.icon=[8,1,MoreTiers.url];
+    uu11.order=900.91;
+    var uu12=Game.TieredUpgrade('Sugar fermions','<q>Really puts an odd spin on things, doesn\'t it?</q>','Antimatter condenser',17);
+    uu12.icon=[13,1,MoreTiers.url];
+    uu12.order=1000.91;
+    var uu13=Game.TieredUpgrade('Gem polishing crews','<q>An elite squad trained in removing dust and dirt from prisms without anyone dying.</q>','Prism',17);
+    uu13.icon=[14,1,MoreTiers.url];
+    uu13.order=1100.91;
+    var uu14=Game.TieredUpgrade('Your ','<q></q>','Chancemaker',17);
+    uu14.icon=[19,1,MoreTiers.url];
+    uu14.order=1200.91;
+    var uu15=Game.TieredUpgrade('','<q></q>','Fractal engine',17);
+    uu15.icon=[20,1,MoreTiers.url];
+    uu15.order=1300.91;
+    var uu16=Game.TieredUpgrade('','<q></q>','Javascript console',17);
+    uu16.icon=[21,1,MoreTiers.url];
+    uu16.order=1400.91;
+    var uu17=Game.TieredUpgrade('','<q></q>','Idleverse',17);
+    uu17.icon=[22,1,MoreTiers.url];
+    uu17.order=1500.91;
+    var uu18=Game.TieredUpgrade('','<q></q>','Cortex baker',17);
+    uu18.icon=[23,1,MoreTiers.url];
+    uu18.order=1600.91;
+    var uu19=Game.TieredUpgrade('','<q></q>','You',17);
+    uu19.icon=[24,1,MoreTiers.url];
+    uu19.order=1700.91;
+    
+    var uu20=Game.NewUnshackleUpgradeTier({tier: 17,q:'A mirror-image stereoisomer of Berrylium. Envokes a much more concentrated fruit flavor, though is highly toxic when ingested, even in the smallest doses. Often used as a dilute in perfumes, leading to a popular internet challenge where teenagers try to drink as much of the substance as possible. Current death toll is 157.'});
+    uu20.icon=[10,1, MoreTiers.url];
+    uu20.order=505.017;
+    uu20.parents=[Game.PrestigeUpgrades[129]]
+    Game.PrestigeUpgrades.push(uu20);
+    uu20.placedByCode=true;
+    uu20.canBePurchased=true;
+
+    var uu21=CCSE.NewUpgrade("Kitten Overlords", "You gain <b>more CpS</b> the more milk you have.<q>All loyalty to your honurr and highness, sir</q>", 9000000000000000000000000000000000000000000000000000000000000, [18, 1, MoreTiers.url]);Game.last.kitten=1;Game.MakeTiered(Game.last,17);
+    
+    uu21.order=20000.91;
+    
+    CCSE.NewUpgrade('Tredecillion fingers',loc("Multiplies the gain from %1 by <b>%2</b>.",[getUpgradeName("Thousand fingers"),20])+'<q></q>',1000000000000000000000000000000000000000,[0,1,MoreTiers.url]);Game.MakeTiered(Game.last,17); Game.last.order=100.91;
+    
+
+    uu21=CCSE.NewUpgrade('A funky gaming mouse',loc("Clicking gains <b>+%1% of your CpS</b>.",1)+'<q>Your not quite sure how to work this thing, but all the extra buttons and lights must help you somehow.</q>',50000000000000000000000000000000,[11,1,MoreTiers.url]);Game.MakeTiered(Game.last,17);
+    uu21.order=150.91;
+    
+
+    
+    u22=Game.TieredAchievement('','','Grandma',17);
+    u22.order=1100.71;
+    u22.icon=[1,1, MoreTiers.url]
+
+    u22=Game.TieredAchievement('','','Farm',17);
+    u22.order=1200.71;
+    u22.icon=[2,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Mine',17);
+    u22.order=1300.71;
+    u22.icon=[3,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Factory',17);
+    u22.order=1400.71;
+    u22.icon=[4,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Bank',17);
+    u22.order=1425.71;
+    u22.icon=[15,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Temple',17);
+    u22.order=1450.71;
+    u22.icon=[16,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Wizard tower',17);
+    u22.order=1475.71;
+    u22.icon=[17,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Shipment',17);
+    u22.order=1500.7;
+    u22.icon=[5,1,MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Alchemy lab',17);
+    u22.order=1600.71;
+    u22.icon=[6,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Portal',17);
+    u22.order=1700.71;
+    u22.icon=[7,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Time machine',17);
+    u22.order=1800.71;
+    u22.icon=[8,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Antimatter condenser',17);
+    u22.order=1900.71;
+    u22.icon=[13,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Prism',17);
+    u22.order=2000.71;
+    u22.icon=[14,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Chancemaker',17);
+    u22.order=2100.71;
+    u22.icon=[19,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Fractal engine',17);
+    u22.order=2200.71;
+    u22.icon=[20,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Javascript console',17);
+    u22.order=2300.71;
+    u22.icon=[21,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Idleverse',17);
+    u22.order=2400.71;
+    u22.icon=[22,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','Cortex baker',17);
+    u22.order=2500.71;
+    u22.icon=[23,1, MoreTiers.url]
+    
+    u22=Game.TieredAchievement('','','You',17);
+    u22.order=2600.71;
+    u22.icon=[24,1, MoreTiers.url]
+    
+    u22=CCSE.NewAchievement('All hand made',loc("Have <b>%1</b>.",loc("%1 cursor",LBeautify(1200))), [0,31])
+    u22.order=1050.71;
+    
+    u22= CCSE.NewAchievement('clicker hero',loc("Make <b>%1</b> from clicking.<q>Wow, a reference to another clicker game? What is this, an advertising site?</q>",loc("%1 cookie",LBeautify(1e37))),[11,1, MoreTiers.url]);
+    u22.order=1000.71;
+
+    
     CCSE.customSave.push(function(){
       MoreTiers.config.hasObsidamin=false;
       if(Game.Has('Unshackled obsidamin'))
         MoreTiers.config.hasObsidamin=true;
-  	  CCSE.config.OtherMods.MyMod = MoreTiers.config;
+      if(Game.Has('Unshackled unberrylium'))
+        MoreTiers.config.hasUnberrylium=true;
+  	  CCSE.config.OtherMods.MoreTiers = MoreTiers.config;
     });
     CCSE.customLoad.push(function(){
     	if(CCSE.config.OtherMods.MoreTiers) MoreTiers.config = CCSE.config.OtherMods.MyMod; else MoreTiers.config = {};
-    	// Do other things if you want
+    	
       if(MoreTiers.config.hasObsidamin) u20.bought=1;
+      if(MoreTiers.config.hasUnberrylium) uu20.bought=1;
     });
 
-	  
+	  MoreTiers.InjectCode();
 
 
     
@@ -198,9 +360,20 @@ MoreTiers.launch = function(){
 
 
 
+  
   MoreTiers.InjectCode= function(){
-		
-	}
+		CCSE.ReplaceCodeIntoFunction('Game.Objects["Cursor"].buyFunction', "if (this.amount>=1000) Game.Win('A round of applause');", "if (this.amount>=1100) Game.Win('Hand it over, buddy');\nif (this.amount>=1200) Game.Win('All hand made');", 1);
+    CCSE.ReplaceCodeIntoFunction("Game.mouseCps", "if (Game.Has('Omniplast mouse')) add+=Game.cookiesPs*0.01;", "if (Game.Has('Mouse mouse')) add+=Game.cookiesPs*0.01; if (Game.Has('A funky gaming mouse')) add+=Game.cookiesPs*0.01;", 1);
+    CCSE.ReplaceCodeIntoFunction("Game.Logic", "Unlock('Omniplast mouse');}", "if (Game.handmadeCookies>=100000000000000000000000000000000000) {Game.Win('Probably an autoclicker');Game.Unlock('Mouse mouse');}\n if (Game.handmadeCookies>=10000000000000000000000000000000000000) {Game.Win('');Game.Unlock('A funky gaming mouse');}", 1);
+    CCSE.ReplaceCodeIntoFunction("Game.mouseCps", "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;\n if (Game.Has('Tredecillion fingers')) add*=	20;", 1,);
+    CCSE.ReplaceCodeIntoFunction("Game.Objects['Cursor'].buyFunction", "if (this.amount>=550) Game.Unlock('Undecillion fingers');", "if (this.amount>=600) Game.Unlock('Duodecillion fingers');\n if (this.amount>=650) Game.Unlock('Tredecillion fingers');", 1);
+    CCSE.ReplaceCodeIntoFunction("Game.Objects['Cursor'].cps", "if (Game.Has('Undecillion fingers')) add*=	20;", "if (Game.Has('Duodecillion fingers')) add*=	20;\n if (Game.Has('Tredecillion fingers')) add*=	20;", 1, false, false);
+    CCSE.ReplaceCodeIntoFunction("Game.CalculateGains", "if (Game.Has('Kitten strategists')) catMult*=(1+Game.milkProgress*0.105*milkMult);", "if (Game.Has('Kitten CEOs')) catMult*=(1+Game.milkProgress*0.12*milkMult);\n if (Game.Has('Kitten Overlords')) catMult*=(1+Game.milkProgress*0.12*milkMult);", 1);
+    CCSE.ReplaceCodeIntoFunction("Game.Logic", "if (Game.milkProgress>=14) Game.Unlock('Kitten strategists');", "if (Game.milkProgress>=15) Game.Unlock('Kitten CEOs'); if (Game.milkProgress>=16) Game.Unlock('Kitten Overlords');", 1);
+  }
+
+
+  
   if(CCSE.ConfirmGameVersion(MoreTiers.name, MoreTiers.version, MoreTiers.GameVersion))MoreTiers.init();
 }
 
