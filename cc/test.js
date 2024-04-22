@@ -14,7 +14,6 @@ TestMod.launch = function(){
 	  u2.icon=[0, 1, "https://greenecad.github.io/cc/img/customIcons.png"];
    	
 	  Game.wrinklerLimit=15;
-	  Game.wrinklers.push({id:"14",close:0,sucked:0,phase:0,x:0,y:0,r:0,hurt:0,hp:Game.wrinklerHP,selected:0,type:0,clicks:0});
 	  if(!Game.customGetWrinklersMax) Game.customGetWrinklersMax = [];
 		CCSE.ReplaceCodeIntoFunction('Game.getWrinklersMax', 'return', "var ret =", 0);
 	  CCSE.SliceCodeIntoFunction('Game.getWrinklersMax', -1, `
