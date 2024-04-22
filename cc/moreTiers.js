@@ -171,7 +171,7 @@ MoreTiers.launch = function(){
     u22.order=1000.7;
 
     
-Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:16, color:'#0f0aa8',price:		999000000000000000000000000000000000000000000000}
+Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:16, color:'#0fbba8',price:		999000000000000000000000000000000000000000000000}
 
     var uu1=Game.TieredUpgrade('forward it back to grandma','<q>At this point, she\'s already forgotten that she sent it to you.</q>','Grandma',17);
     uu1.icon=[1,1,MoreTiers.url];
@@ -200,7 +200,7 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
     var uu9=Game.TieredUpgrade('promony','<q>Actually not worth much money.</q>','Alchemy lab',17);
     uu9.icon=[6,1,MoreTiers.url];
     uu9.order=700.91;
-    var uu10=Game.TieredUpgrade('','<q></q>','Portal',17);
+    var uu10=Game.TieredUpgrade('Secrets of the ancient tablet','<q>As soon as you are able to read the tablet, it will be a lot more useful.</q>','Portal',17);
     uu10.icon=[7,1,MoreTiers.url];
     uu10.order=800.91;
     var uu11=Game.TieredUpgrade('Flux overdrive','<q>This is generally not considered a good thing. Who cares, though?</q>','Time machine',17);
@@ -212,22 +212,22 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
     var uu13=Game.TieredUpgrade('Gem polishing crews','<q>An elite squad trained in removing dust and dirt from prisms without anyone dying.</q>','Prism',17);
     uu13.icon=[14,1,MoreTiers.url];
     uu13.order=1100.91;
-    var uu14=Game.TieredUpgrade('Your ','<q></q>','Chancemaker',17);
+    var uu14=Game.TieredUpgrade('Your unlucky cookie','<q>That\'s it! You\'ve finally found whats holding you back!</q>','Chancemaker',17);
     uu14.icon=[19,1,MoreTiers.url];
     uu14.order=1200.91;
-    var uu15=Game.TieredUpgrade('','<q></q>','Fractal engine',17);
+    var uu15=Game.TieredUpgrade('Meta-meta-bakeries','<q>I feel like we\'re repeating ourselves, but what did you expect with fractals?</q>','Fractal engine',17);
     uu15.icon=[20,1,MoreTiers.url];
     uu15.order=1300.91;
-    var uu16=Game.TieredUpgrade('','<q></q>','Javascript console',17);
+    var uu16=Game.TieredUpgrade('Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript','<q>Mostly contains random facts you will never use.</q>','Javascript console',17);
     uu16.icon=[21,1,MoreTiers.url];
     uu16.order=1400.91;
-    var uu17=Game.TieredUpgrade('','<q></q>','Idleverse',17);
+    var uu17=Game.TieredUpgrade('Imperialism','<q>You realize that your destiny is to educate and enlighten the backwards savages that live in other idleverses, bringing peace and prosperity everywhere! This newfound sense of purpose rejuvenates your efforts for conquest.</q>','Idleverse',17);
     uu17.icon=[22,1,MoreTiers.url];
     uu17.order=1500.91;
-    var uu18=Game.TieredUpgrade('','<q></q>','Cortex baker',17);
+    var uu18=Game.TieredUpgrade('Complete neural filter','<q>Allows complete control of every thought that goes through your cortex baker\'s brains. Only allows thoughts about the production of cookies.</q>','Cortex baker',17);
     uu18.icon=[23,1,MoreTiers.url];
     uu18.order=1600.91;
-    var uu19=Game.TieredUpgrade('','<q></q>','You',17);
+    var uu19=Game.TieredUpgrade('Better cloning vats','<q>This makes cloning much more efficient, takes up much less room, and has much less ethical violations.</q>','You',17);
     uu19.icon=[24,1,MoreTiers.url];
     uu19.order=1700.91;
     
@@ -243,7 +243,7 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
     
     uu21.order=20000.91;
     
-    CCSE.NewUpgrade('Tredecillion fingers',loc("Multiplies the gain from %1 by <b>%2</b>.",[getUpgradeName("Thousand fingers"),20])+'<q></q>',1000000000000000000000000000000000000000,[0,1,MoreTiers.url]);Game.MakeTiered(Game.last,17); Game.last.order=100.91;
+    CCSE.NewUpgrade('Tredecillion fingers',loc("Multiplies the gain from %1 by <b>%2</b>.",[getUpgradeName("Thousand fingers"),20])+'<q>clickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickity</q>',1000000000000000000000000000000000000000,[0,1,MoreTiers.url]);Game.MakeTiered(Game.last,17); Game.last.order=100.91;
     
 
     uu21=CCSE.NewUpgrade('A funky gaming mouse',loc("Clicking gains <b>+%1% of your CpS</b>.",1)+'<q>Your not quite sure how to work this thing, but all the extra buttons and lights must help you somehow.</q>',50000000000000000000000000000000,[11,1,MoreTiers.url]);Game.MakeTiered(Game.last,17);
