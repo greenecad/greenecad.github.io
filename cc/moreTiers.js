@@ -251,11 +251,11 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
     
 
     
-    u22=Game.TieredAchievement('','','Grandma',17);
+    u22=Game.TieredAchievement('Oldheads','','Grandma',17);
     u22.order=1100.71;
     u22.icon=[1,1, MoreTiers.url]
 
-    u22=Game.TieredAchievement('','','Farm',17);
+    u22=Game.TieredAchievement('\'till the cows come home','','Farm',17);
     u22.order=1200.71;
     u22.icon=[2,1, MoreTiers.url]
     
@@ -323,7 +323,7 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
     u22.order=2500.71;
     u22.icon=[23,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','You',17);
+    u22=Game.TieredAchievement('The one to rule them all','','You',17);
     u22.order=2600.71;
     u22.icon=[24,1, MoreTiers.url]
     
