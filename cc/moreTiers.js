@@ -259,39 +259,39 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
     u22.order=1200.71;
     u22.icon=[2,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Mine',17);
+    u22=Game.TieredAchievement('Minor miner','','Mine',17);
     u22.order=1300.71;
     u22.icon=[3,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Factory',17);
+    u22=Game.TieredAchievement('The greatest revolution','','Factory',17);
     u22.order=1400.71;
     u22.icon=[4,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Bank',17);
+    u22=Game.TieredAchievement('Stonks','','Bank',17);
     u22.order=1425.71;
     u22.icon=[15,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Temple',17);
+    u22=Game.TieredAchievement('Holy chant','','Temple',17);
     u22.order=1450.71;
     u22.icon=[16,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Wizard tower',17);
+    u22=Game.TieredAchievement('Ultima','','Wizard tower',17);
     u22.order=1475.71;
     u22.icon=[17,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Shipment',17);
+    u22=Game.TieredAchievement('Edge of the universe','','Shipment',17);
     u22.order=1500.7;
     u22.icon=[5,1,MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Alchemy lab',17);
+    u22=Game.TieredAchievement('International precious metals crisis','','Alchemy lab',17);
     u22.order=1600.71;
     u22.icon=[6,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Portal',17);
+    u22=Game.TieredAchievement('Eldritch nightmare material','','Portal',17);
     u22.order=1700.71;
     u22.icon=[7,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Time machine',17);
+    u22=Game.TieredAchievement('Time twister','','Time machine',17);
     u22.order=1800.71;
     u22.icon=[8,1, MoreTiers.url]
     
@@ -299,15 +299,15 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
     u22.order=1900.71;
     u22.icon=[13,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Prism',17);
+    u22=Game.TieredAchievement('Unending radience','','Prism',17);
     u22.order=2000.71;
     u22.icon=[14,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Chancemaker',17);
+    u22=Game.TieredAchievement('Many are the strange chances of the world','','Chancemaker',17);
     u22.order=2100.71;
     u22.icon=[19,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Fractal engine',17);
+    u22=Game.TieredAchievement('Creating achievement names is hard','<q>The fun thing about fractal engines, though, is that I can reference that in an achievement description and get one more knocked out.</q>','Fractal engine',17);
     u22.order=2200.71;
     u22.icon=[20,1, MoreTiers.url]
     
@@ -319,7 +319,7 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
     u22.order=2400.71;
     u22.icon=[22,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Cortex baker',17);
+    u22=Game.TieredAchievement('Neuron activation','','Cortex baker',17);
     u22.order=2500.71;
     u22.icon=[23,1, MoreTiers.url]
     
