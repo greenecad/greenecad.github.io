@@ -51,11 +51,13 @@ SanityMeter.launch = function(){
 			var maxWidth = l('SanityBar').getBoundingClientRect().width - 185;
 			
 			l('SanityBar').innerHTML = '';
-			
-			
-			
-			
+			var meter = document.createElement('div');
+			meter.id = 'SanityMeter';
+			meter.style.height = '12px';
+			meter.style.margin = '0px 10px';
+			meter.style.position = 'relative';
 		}
+  }
 	
 
   
