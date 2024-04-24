@@ -295,11 +295,11 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
     u22.order=1800.71;
     u22.icon=[8,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Antimatter condenser',17);
+    u22=Game.TieredAchievement('Schrödinger\'s cookie','','Antimatter condenser',17);
     u22.order=1900.71;
     u22.icon=[13,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('Unending radience','','Prism',17);
+    u22=Game.TieredAchievement('Eternal radience','','Prism',17);
     u22.order=2000.71;
     u22.icon=[14,1, MoreTiers.url]
     
@@ -311,11 +311,11 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
     u22.order=2200.71;
     u22.icon=[20,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Javascript console',17);
+    u22=Game.TieredAchievement('Error free','<q>You\'re getting 157 warnings, but who cares about those?</q>','Javascript console',17);
     u22.order=2300.71;
     u22.icon=[21,1, MoreTiers.url]
     
-    u22=Game.TieredAchievement('','','Idleverse',17);
+    u22=Game.TieredAchievement('All your idleverse is belong to me','','Idleverse',17);
     u22.order=2400.71;
     u22.icon=[22,1, MoreTiers.url]
     
