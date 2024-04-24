@@ -243,7 +243,7 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
     
     uu21.order=20000.91;
     
-    CCSE.NewUpgrade('Tredecillion fingers',loc("Multiplies the gain from %1 by <b>%2</b>.",[getUpgradeName("Thousand fingers"),20])+'<q>clickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickityclickity</q>',1000000000000000000000000000000000000000,[0,1,MoreTiers.url]);Game.MakeTiered(Game.last,17); Game.last.order=100.91;
+    CCSE.NewUpgrade('Tredecillion fingers',loc("Multiplies the gain from %1 by <b>%2</b>.",[getUpgradeName("Thousand fingers"),20])+'<q>clickityclickityclickity<wbr>clickityclickityclickity<wbr>clickityclickityclickity<wbr>clickityclickityclickityclickity<wbr>clickityclickityclickityclickity<wbr>clickityclickityclickityclickityclickity<wbr>clickityclickityclickityclickity<wbr>clickityclickityclickityclickityclickityclickityclickity<wbr>clickityclickityclickityclickity<wbr>clickityclickityclickityclickity</q>',1000000000000000000000000000000000000000,[0,1,MoreTiers.url]);Game.MakeTiered(Game.last,17); Game.last.order=100.91;
     
 
     uu21=CCSE.NewUpgrade('A funky gaming mouse',loc("Clicking gains <b>+%1% of your CpS</b>.",1)+'<q>Your not quite sure how to work this thing, but all the extra buttons and lights must help you somehow.</q>',50000000000000000000000000000000,[11,1,MoreTiers.url]);Game.MakeTiered(Game.last,17);
