@@ -9,8 +9,9 @@ SanityMeter.launch = function(){
   SanityMeter.init= function(){
 
     SanityMeter.sanity=1;
+    SanityMeter.active=false;
     CCSE.CreateSpecialObject('sanity', 
-			function(){//grandmapocalypse started(I cant find where the stage is stored)}, 
+			function(){if(Game.HasAchiev("Grandmapocalypse") /*maybe change this later*/){SanityMeter.active=true; return true;} else(SanityMeter.active=false; return false;)}, 
 			function(picframe){
 				picframe.pic = SanityMeter.pic;
 				picframe.frame = 0;
@@ -56,6 +57,7 @@ SanityMeter.launch = function(){
 			meter.style.height = '12px';
 			meter.style.margin = '0px 10px';
 			meter.style.position = 'relative';
+			meter.style.color="#ff0000";
 		}
   }
 	
