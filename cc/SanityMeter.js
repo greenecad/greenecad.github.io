@@ -11,7 +11,17 @@ SanityMeter.launch = function(){
     SanityMeter.sanity=1;
     SanityMeter.active=false;
     CCSE.CreateSpecialObject('sanity', 
-			function(){if(Game.HasAchiev("Grandmapocalypse") /*maybe change this later*/){SanityMeter.active=true; return true;} else(SanityMeter.active=false; return false;)}, 
+			function(){
+				if(Game.HasAchiev("Grandmapocalypse") /*maybe change this later*/)
+			         {
+					 SanityMeter.active=true; 
+					 return true;
+				 }
+				else{
+					SanityMeter.active=false; 
+					return false;
+				}
+			}, 
 			function(picframe){
 				picframe.pic = SanityMeter.pic;
 				picframe.frame = 0;
@@ -48,7 +58,7 @@ SanityMeter.launch = function(){
 	}
   
   TimerWidget.Update = function(){
-		if(Game.specialTab == 'timer'){
+		if(Game.specialTab == 'sanity'){
 			var maxWidth = l('SanityBar').getBoundingClientRect().width - 185;
 			
 			l('SanityBar').innerHTML = '';
@@ -57,7 +67,38 @@ SanityMeter.launch = function(){
 			meter.style.height = '12px';
 			meter.style.margin = '0px 10px';
 			meter.style.position = 'relative';
-			meter.style.color="#ff0000";
+
+			var div = document.createElement('div');
+			div.style.width = '100%';
+			div.style.height = '10px';
+			div.style.margin = 'auto';
+			div.style.position = 'absolute';
+			div.style.left = '0px';
+			div.style.top = '0px';
+			div.style.right = '0px';
+			div.style.bottom = '0px';
+	
+			var type = document.createElement('span');
+			type.style.display = 'inline-block';
+			type.style.textAlign = 'right';
+			type.style.width = '117px';
+			type.style.marginRight = '5px';
+			type.style.verticalAlign = 'text-top';
+			type.textContent = Math.round(SanityMeter.sanity*100)+"%";
+			div.appendChild(type);
+
+			var colorBar = document.createElement('span');
+			colorBar.id = bars[i].id
+			colorBar.style.display = 'inline-block';
+			colorBar.style.height = '10px';
+			if (bars.length - 1 == i) {
+				colorBar.style.borderTopRightRadius = '10px';
+				colorBar.style.borderBottomRightRadius = '10px';
+			}
+			if (typeof bars[i].color !== 'undefined') {
+				colorBar.style.backgroundColor = bars[i].color;
+			}
+			div.appendChild(colorBar);
 		}
   }
 	
