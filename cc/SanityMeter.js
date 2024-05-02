@@ -12,6 +12,7 @@ SanityMeter.launch = function(){
     SanityMeter.active=false;
     CCSE.CreateSpecialObject('sanity', 
 			function(){
+				return true;
 				if(Game.HasAchiev("Grandmapocalypse") /*maybe change this later*/)
 			         {
 					 SanityMeter.active=true; 
@@ -50,14 +51,14 @@ SanityMeter.launch = function(){
   SanityMeter.ToggleSpecialMenu = function(str){
 		str = CCSE.SetSpecialMenuImage(str, SanityMeter.pic, 0);
 		
-		str += '<h3>Timer</h3>' + 
+		str += '<h3>Sanity</h3>' + 
 			   '<div class="line"></div>' + 
 			   '<div id="SanityBar" style="text-align:left;margin-bottom:4px;"></div>';
 		
 		return str;
 	}
   
-  TimerWidget.Update = function(){
+  SanityMeter.Update = function(){
 		if(Game.specialTab == 'sanity'){
 			var maxWidth = l('SanityBar').getBoundingClientRect().width - 185;
 			
@@ -88,17 +89,17 @@ SanityMeter.launch = function(){
 			div.appendChild(type);
 
 			var colorBar = document.createElement('span');
-			colorBar.id = bars[i].id
+			colorBar.id = 'colorbar'
 			colorBar.style.display = 'inline-block';
 			colorBar.style.height = '10px';
-			if (bars.length - 1 == i) {
-				colorBar.style.borderTopRightRadius = '10px';
-				colorBar.style.borderBottomRightRadius = '10px';
-			}
-			if (typeof bars[i].color !== 'undefined') {
-				colorBar.style.backgroundColor = bars[i].color;
-			}
+			colorBar.style.width = maxWidth+ 'px';
+			colorBar.style.borderRadius = '10px';
+			
+			colorBar.style.backgroundColor = '#00ff00';
+			
 			div.appendChild(colorBar);
+                        meter.appendChild(div)
+			l('SanityBar').appendChild(meter);
 		}
   }
 	
