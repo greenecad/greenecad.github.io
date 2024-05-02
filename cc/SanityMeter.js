@@ -29,22 +29,22 @@ SanityMeter.launch = function(){
 			}, 
 			SanityMeter.ToggleSpecialMenu
 		);
-   	
-	  Game.customDrawSpecial.push(SanityMeter.Update);
+   	Game.registerHook('logic', SanityMeter.SanityLogic);
+	Game.customDrawSpecial.push(SanityMeter.Update);
 
-    CCSE.customSave.push(function(){
-      //todo: save sanity level
-    })
+        CCSE.customSave.push(function(){
+		//todo: save sanity level
+	})
 		
-		CCSE.customLoad.push(function(){
-			l('specialPopup').className='framed prompt offScreen';
-		});
+	CCSE.customLoad.push(function(){
+		l('specialPopup').className='framed prompt offScreen';
+	});
 	  
 	  
 	  
-	  SanityMeter.isLoaded = 1;
-    	  if (Game.prefs.popups) Game.Popup(SanityMeter.name + ' loaded!');
-    	  else Game.Notify(SanityMeter.name + ' loaded!', '', '', 6, 1);
+	SanityMeter.isLoaded = 1;
+    	if (Game.prefs.popups) Game.Popup(SanityMeter.name + ' loaded!');
+    	else Game.Notify(SanityMeter.name + ' loaded!', '', '', 6, 1);
 	  
   }
 
@@ -102,7 +102,28 @@ SanityMeter.launch = function(){
 			l('SanityBar').appendChild(meter);
 		}
   }
-	
+
+    SanityMeter.SanityLogic= function (){
+        if(SanityMeter.active){
+            var change=0
+            change-= .01*Game.elderWrath;
+    
+            if(Game.hasGod && Game.hasGod('scorn')){
+                change-= .04*Game.hasGod('scorn');
+            }
+            if(Game.hasGod && Game.hasGod('decadence')){
+                change-= .02*Game.hasGod('decadence');
+            }
+            if(Game.hasGod && Game.hasGod('asceticism')){
+                change+= .01*Game.hasGod('asceticism');
+            }
+            if(Game.hasGod && Game.hasGod('mother')){
+                change+= .03*Game.hasGod('mother');
+            }
+
+            SanityMeter.sanity+=change;
+        }
+    }
 
   
    if(CCSE.ConfirmGameVersion(SanityMeter.name, SanityMeter.version, SanityMeter.GameVersion))SanityMeter.init();
