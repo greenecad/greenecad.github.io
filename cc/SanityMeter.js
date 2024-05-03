@@ -92,7 +92,7 @@ SanityMeter.launch = function(){
 			colorBar.id = 'colorbar'
 			colorBar.style.display = 'inline-block';
 			colorBar.style.height = '10px';
-			colorBar.style.width = maxWidth+ 'px';
+			colorBar.style.width = (maxWidth*SanityMeter.sanity)+ 'px';
 			colorBar.style.borderRadius = '10px';
 			
 			colorBar.style.backgroundColor = '#00ff00';
@@ -106,22 +106,25 @@ SanityMeter.launch = function(){
     SanityMeter.SanityLogic= function (){
         if(SanityMeter.active){
             var change=0
-            change-= .01*Game.elderWrath;
+            change-= .00015*Game.elderWrath;
     
             if(Game.hasGod && Game.hasGod('scorn')){
-                change-= .04*Game.hasGod('scorn');
+                change-= .0004*Game.hasGod('scorn');
             }
             if(Game.hasGod && Game.hasGod('decadence')){
-                change-= .02*Game.hasGod('decadence');
+                change-= .0002*Game.hasGod('decadence');
             }
             if(Game.hasGod && Game.hasGod('asceticism')){
-                change+= .01*Game.hasGod('asceticism');
+                change+= .0001*Game.hasGod('asceticism');
             }
             if(Game.hasGod && Game.hasGod('mother')){
-                change+= .03*Game.hasGod('mother');
+                change+= .0003*Game.hasGod('mother');
             }
 
             SanityMeter.sanity+=change;
+	    if(SanityMeter.sanity>1 && !Game.Has('Enlightenment')){
+		    SanityMeter.sanity=1;
+	    }
         }
     }
 
