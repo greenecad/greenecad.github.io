@@ -335,7 +335,7 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
 
     
     CCSE.customSave.push(function(){
-      MoreTiers.config.hasObsidamin=false;
+      MoreTiers.config={hasObsidamin: false, hasUnberrylium: false};
       if(Game.Has('Unshackled obsidamin'))
         MoreTiers.config.hasObsidamin=true;
       if(Game.Has('Unshackled unberrylium'))
@@ -343,7 +343,7 @@ Game.Tiers[17]={name:'Unberrylium',unlock:700,achievUnlock:800,iconRow:21,tier:1
   	  CCSE.config.OtherMods.MoreTiers = MoreTiers.config;
     });
     CCSE.customLoad.push(function(){
-    	if(CCSE.config.OtherMods.MoreTiers) MoreTiers.config = CCSE.config.OtherMods.MyMod; else MoreTiers.config = {};
+    	if(CCSE.config.OtherMods.MoreTiers) MoreTiers.config = CCSE.config.OtherMods.MoreTiers; else MoreTiers.config = {};
     	
       if(MoreTiers.config.hasObsidamin) u20.bought=1;
       if(MoreTiers.config.hasUnberrylium) uu20.bought=1;
